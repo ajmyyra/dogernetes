@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: daas-deployment
+  labels:
+    animal: doggos
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: daas
+  template:
+    metadata:
+      labels:
+        app: daas
+    spec:
+      containers:
+      - name: daas
+        image: ajmyyra/daas:v1
+        ports:
+        - containerPort: 5000

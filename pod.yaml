@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: daas
+  labels:
+    animal: dog
+spec:
+  containers:
+  - name: daas
+    image: ajmyyra/daas:v1
+    ports:
+    - containerPort: 5000
+  nodeSelector:
+    dogfriendly: woof
